@@ -63,10 +63,16 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
       alert('Пожалуйста, введите корректные данные.')
     }
   }
-
+  if (!roofData || !roofData.questions) {
+    return null // Or you can render a loading state or an error message
+  }
   return (
     <div className="data-input-container">
       <h2>Введите данные для крыши типа {selectedRoofType}:</h2>
+      <progress
+        value={(currentQuestionIndex + 1) * (100 / roofData.questions.length)}
+        max="100"
+      ></progress>
       <div>
         <img
           src={roofData?.questions[currentQuestionIndex].image}
