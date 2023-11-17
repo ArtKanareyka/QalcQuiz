@@ -21,7 +21,7 @@ interface RoofDataInputProps {
 const RoofDataInput: React.FC<RoofDataInputProps> = ({
   selectedRoofType,
   onSubmit,
-  onBack, // Добавляем новый обратный вызов для кнопки "Назад"
+  onBack,
 }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [inputData, setInputData] = useState<number[]>([0])
@@ -79,11 +79,6 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
           alt={roofData?.questions[currentQuestionIndex].question}
         />
         <p>{roofData?.questions[currentQuestionIndex].question}</p>
-        <input
-          type="number"
-          value={inputData[currentQuestionIndex]}
-          onChange={(e) => handleInputChange(e.target.value)}
-        />
       </div>
       <div className="button-container">
         {currentQuestionIndex > 0 ? (
@@ -95,6 +90,11 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
             Назад
           </button>
         )}
+        <input
+          type="number"
+          value={inputData[currentQuestionIndex]}
+          onChange={(e) => handleInputChange(e.target.value)}
+        />
         {currentQuestionIndex < (roofData?.questions.length || 0) - 1 && (
           <button className="button next-button" onClick={handleNextQuestion}>
             Далее

@@ -12,7 +12,7 @@ const Result: React.FC<ResultProps> = ({ result, onRestart }) => {
       <h2>Результат:</h2>
       {result !== null ? (
         <div className="result">
-          <p>Рассчитанный результат: {result} м2</p>
+          <p>Площадь крыши: {result} м2</p>
           <button className="result-button" onClick={onRestart}>
             Начать заново
           </button>

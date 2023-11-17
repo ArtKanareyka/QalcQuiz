@@ -7,9 +7,10 @@ body {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  height: 100vh;
 
   h2 {
     color: #333;
@@ -17,9 +18,11 @@ body {
 }
 
 .button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  max-width: 300px;
 }
 
 .data-input-container {
@@ -29,8 +32,8 @@ body {
   text-align: center;
 
   img {
-    width: 100%; /* Make images fill the container width */
-    max-width: 300px; /* Limit the maximum image width */
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 10px;
   }
 
@@ -42,6 +45,17 @@ body {
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: 1px solid #3498db;
+    text-align: center;
+    border-radius: 4px;
+    height: 31px;
   }
 
   .button {
@@ -133,17 +147,25 @@ body {
 
 /* Media query for tablets */
 @media screen and (min-width: 600px) {
+  .container {
+    height: 100%;
+    padding: 20px;
+  }
   .type-roof__container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    grid-template-columns: repeat(3, 1fr); /* Two columns for tablets */
   }
   .type-roof__title {
     place-self: center;
-    grid-column: span 2;
+    grid-column: span 3;
   }
 }
 
 /* Media query for larger screens */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .container {
+    height: 100%;
+    padding: 20px;
+  }
   .type-roof__container {
     grid-template-columns: repeat(
       3,

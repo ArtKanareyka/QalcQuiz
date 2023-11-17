@@ -15,7 +15,7 @@ interface RoofType {
 const storage: RoofType[] = [
   {
     id: 0,
-    typeRoof: 'Односкатная',
+    typeRoof: 'Двускатная',
     questions: [
       {
         id: 0,
@@ -40,11 +40,11 @@ const storage: RoofType[] = [
     ],
 
     image: '.../../assets/Gable/Gable-0.svg',
-    alt: 'Схема односкатной крыши',
+    alt: 'Схема двускатной крыши',
   },
   {
     id: 1,
-    typeRoof: 'Двускатная',
+    typeRoof: 'Односкатная',
     questions: [
       {
         id: 0,
@@ -69,7 +69,7 @@ const storage: RoofType[] = [
     ],
 
     image: '.../../assets/Shed/Shed-0.svg',
-    alt: 'Схема двускатной крыши',
+    alt: 'Схема отдноскатной крыши',
   },
   {
     id: 2,
