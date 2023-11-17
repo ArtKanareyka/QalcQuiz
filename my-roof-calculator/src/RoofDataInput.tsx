@@ -30,7 +30,7 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
   const roofDataMap = useMemo(() => {
     const map: Record<string, number[]> = {}
     storage.forEach((item) => {
-      map[item.typeRoof] = new Array(item.questions.length).fill(0)
+      map[item.typeRoof] = new Array(item.questions.length).fill(5)
     })
     return map
   }, [])
@@ -49,7 +49,14 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
   }
 
   const handleNextQuestion = () => {
-    setCurrentQuestionIndex(currentQuestionIndex + 1)
+    if (
+      inputData[currentQuestionIndex] !== 0 &&
+      !isNaN(inputData[currentQuestionIndex])
+    ) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1)
+    } else {
+      alert('Пожалуйста, введите значение не равное 0 и не пустую.')
+    }
   }
 
   const handlePrevQuestion = () => {
@@ -70,9 +77,13 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
     <div className="data-input-container">
       <h2>Введите данные для крыши типа {selectedRoofType}:</h2>
       <progress
+        className="progress-bar"
         value={(currentQuestionIndex + 1) * (100 / roofData.questions.length)}
         max="100"
       ></progress>
+      <span>
+        {`${(currentQuestionIndex + 1) * (100 / roofData.questions.length)}%`}
+      </span>
       <div>
         <img
           src={roofData?.questions[currentQuestionIndex].image}
@@ -92,6 +103,7 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
         )}
         <input
           type="number"
+          step="any"
           value={inputData[currentQuestionIndex]}
           onChange={(e) => handleInputChange(e.target.value)}
         />
