@@ -160,7 +160,7 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
         <form>
           <input
             type="text"
-            inputMode="numeric"
+            inputMode="decimal"
             value={inputData[currentQuestionIndex]}
             placeholder={roofData?.questions[currentQuestionIndex].question}
             onChange={(e) => handleInputChange(e.target.value)}
