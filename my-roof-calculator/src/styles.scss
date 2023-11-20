@@ -41,6 +41,25 @@ body {
     margin-bottom: 10px;
   }
 
+  ol {
+    list-style-type: none;
+  }
+  /* Стили для текущего вопроса */
+  .questions-list li.active {
+    color: black;
+    font-weight: bold;
+  }
+
+  /* Стили для пройденных вопросов */
+  .questions-list li.completed {
+    color: green;
+  }
+
+  /* Стили для неотвеченных вопросов */
+  .questions-list li {
+    color: gray;
+  }
+
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
