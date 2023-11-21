@@ -74,7 +74,6 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
     setInputData((prevData) => {
       const newData = [...prevData]
       newData[currentQuestionIndex] = filteredValue
-      console.log(newData)
       return newData
     })
   }
@@ -107,7 +106,6 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
 
       // Отправка преобразованного массива
       onSubmit(numericData)
-      console.log(numericData)
     } else {
       alert('Пожалуйста, введите корректные значения.')
     }

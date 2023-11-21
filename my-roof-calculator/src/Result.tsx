@@ -22,8 +22,6 @@ const Result: React.FC<ResultProps> = ({
     return <div>Данные о крыше не найдены</div>
   }
 
-  console.log(roofData)
-
   return (
     <div className="data-input-container">
       <h2>Результат расчетов крыши типа {selectedRoofType}</h2>
