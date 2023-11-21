@@ -16,6 +16,7 @@ interface RoofDataInputProps {
   selectedRoofType: string
   onSubmit: (data: number[]) => void
   onBack: () => void
+  inputData: string[]
 }
 
 const RoofDataInput: React.FC<RoofDataInputProps> = ({

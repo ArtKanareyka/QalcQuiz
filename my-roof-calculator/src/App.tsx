@@ -128,6 +128,7 @@ const App: React.FC = () => {
           selectedRoofType={selectedRoofType}
           onSubmit={handleDataInputSubmit}
           onBack={handleBack}
+          inputData={[]}
         />
       )}
       {currentStep === 3 && (
@@ -135,6 +136,7 @@ const App: React.FC = () => {
           result={result}
           onRestart={handleRestart}
           selectedRoofType={selectedRoofType}
+          inputData={roofData} // Передача данных о вопросах и ответах
         />
       )}
     </div>
