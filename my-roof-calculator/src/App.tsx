@@ -131,7 +131,11 @@ const App: React.FC = () => {
         />
       )}
       {currentStep === 3 && (
-        <Result result={result} onRestart={handleRestart} />
+        <Result
+          result={result}
+          onRestart={handleRestart}
+          selectedRoofType={selectedRoofType}
+        />
       )}
     </div>
   )

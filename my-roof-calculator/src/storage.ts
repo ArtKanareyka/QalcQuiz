@@ -19,22 +19,22 @@ const storage: RoofType[] = [
     questions: [
       {
         id: 0,
-        question: 'Ширина здания, м',
+        question: 'Ширина здания',
         image: '.../../assets/Gable/Gable-A.svg',
       },
       {
         id: 1,
-        question: 'Высота крыши в коньке, м',
+        question: 'Высота крыши в коньке',
         image: '.../../assets/Gable/Gable-B.svg',
       },
       {
         id: 2,
-        question: 'Длина свеса, м',
+        question: 'Длина свеса',
         image: '.../../assets/Gable/Gable-C.svg',
       },
       {
         id: 3,
-        question: 'Длина конька, м',
+        question: 'Длина конька',
         image: '.../../assets/Gable/Gable-D.svg',
       },
     ],
@@ -48,22 +48,22 @@ const storage: RoofType[] = [
     questions: [
       {
         id: 0,
-        question: 'Ширина здания, м',
+        question: 'Ширина здания',
         image: '.../../assets/Shed/Shed-A.svg',
       },
       {
         id: 1,
-        question: 'Высота крыши в коньке, м',
+        question: 'Высота крыши в коньке',
         image: '.../../assets/Shed/Shed-B.svg',
       },
       {
         id: 2,
-        question: 'Длина свеса, м',
+        question: 'Длина свеса',
         image: '.../../assets/Shed/Shed-C1.svg',
       },
       {
         id: 3,
-        question: 'Длина конька, м',
+        question: 'Длина конька',
         image: '.../../assets/Shed/Shed-D.svg',
       },
     ],
@@ -77,32 +77,32 @@ const storage: RoofType[] = [
     questions: [
       {
         id: 0,
-        question: 'Ширина заложений, м',
+        question: 'Ширина заложений',
         image: '.../../assets/Mansard/Mansard-A1.svg',
       },
       {
         id: 1,
-        question: 'Ширина заложений, м',
+        question: 'Ширина заложений',
         image: '.../../assets/Mansard/Mansard-A2.svg',
       },
       {
         id: 2,
-        question: 'Высота подъема, м',
+        question: 'Высота подъема',
         image: '.../../assets/Mansard/Mansard-B1.svg',
       },
       {
         id: 3,
-        question: 'Высота подъема, м',
+        question: 'Высота подъема',
         image: '.../../assets/Mansard/Mansard-B2.svg',
       },
       {
         id: 4,
-        question: 'Длина свеса, м',
+        question: 'Длина свеса',
         image: '.../../assets/Mansard/Mansard-C.svg',
       },
       {
         id: 5,
-        question: 'Длина конька, м',
+        question: 'Длина конька',
         image: '.../../assets/Mansard/Mansard-D.svg',
       },
     ],
@@ -116,22 +116,22 @@ const storage: RoofType[] = [
     questions: [
       {
         id: 0,
-        question: 'Ширина ската, м',
+        question: 'Ширина ската',
         image: '.../../assets/Hip/Hip-A.svg',
       },
       {
         id: 1,
-        question: 'Ширина ската, м',
+        question: 'Ширина ската',
         image: '.../../assets/Hip/Hip-B.svg',
       },
       {
         id: 2,
-        question: 'Ширина конька, м',
+        question: 'Ширина конька',
         image: '.../../assets/Hip/Hip-D.svg',
       },
       {
         id: 3,
-        question: 'Высота конька, м',
+        question: 'Высота конька',
         image: '.../../assets/Hip/Hip-K.svg',
       },
     ],
@@ -145,17 +145,17 @@ const storage: RoofType[] = [
     questions: [
       {
         id: 0,
-        question: 'Ширина ската, м',
+        question: 'Ширина ската',
         image: '.../../assets/Hip2/Hip2-A.svg',
       },
       {
         id: 1,
-        question: 'Ширина ската, м',
+        question: 'Ширина ската',
         image: '.../../assets/Hip2/Hip2-D.svg',
       },
       {
         id: 2,
-        question: 'Высота конька, м',
+        question: 'Высота конька',
         image: '.../../assets/Hip2/Hip2-K.svg',
       },
     ],

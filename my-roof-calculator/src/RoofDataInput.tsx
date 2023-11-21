@@ -142,7 +142,7 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
                   : ''
               }
             >
-              {question.question}
+              {question.question} {inputData[index]} м
             </li>
           ))}
         </ol>
