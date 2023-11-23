@@ -1,9 +1,9 @@
 // App.tsx
 import React, { useState, useEffect } from 'react'
 import './styles.scss'
-import RoofTypeSelector from './RoofTypeSelector'
-import RoofDataInput from './RoofDataInput'
-import Result from './Result'
+import TypeSelector from './Type/TypeSelector'
+import Input from './Input/Input'
+import Result from './Result/Result'
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1)
@@ -119,12 +119,10 @@ const App: React.FC = () => {
   }, [roofData, selectedRoofType])
 
   return (
-    <div className="container">
-      {currentStep === 1 && (
-        <RoofTypeSelector onSelect={handleRoofTypeSelect} />
-      )}
+    <div className="app__container">
+      {currentStep === 1 && <TypeSelector onSelect={handleRoofTypeSelect} />}
       {currentStep === 2 && (
-        <RoofDataInput
+        <Input
           selectedRoofType={selectedRoofType}
           onSubmit={handleDataInputSubmit}
           onBack={handleBack}

@@ -1,0 +1,110 @@
+.roof__container {
+  text-align: center;
+
+  .title__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .list-button-img__contanier {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  .list-button__contanier {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  img {
+    grid-row: span 2; /* элемент будет занимать 2 строки */
+    grid-column: span 1; /* элемент будет занимать 1 колонку */
+    justify-self: center;
+    width: 100%;
+    max-height: 300px;
+    max-width: 300px;
+  }
+
+  ol {
+    padding-inline-start: 0px;
+    text-align: left;
+    list-style-type: none;
+  }
+  /* Стили для текущего вопроса */
+  .roof__questions-list li.active {
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  /* Стили для пройденных вопросов */
+  .roof__questions-list li.completed {
+    color: green;
+  }
+
+  /* Стили для неотвеченных вопросов */
+  .roof__questions-list li {
+    color: gray;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: 1px solid #3498db;
+    text-align: center;
+    border-radius: 4px;
+    height: 31px;
+  }
+
+  .roof__button-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #3498db;
+    color: #fff;
+    width: 80px;
+    height: 35px;
+  }
+
+  .back-button:hover {
+    background-color: #e74c3c;
+  }
+
+  .next-button:hover {
+    background-color: #218c54;
+  }
+
+  .roof__progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #3498db;
+    gap: 10px;
+  }
+
+  .roof__progress-bar {
+    flex-grow: 1;
+    height: 30px;
+  }
+}

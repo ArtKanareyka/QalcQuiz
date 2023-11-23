@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import storage from './storage'
+import storage from '../Data/storage'
+import './input.scss'
 
 interface RoofQuestion {
   id: number
@@ -12,14 +13,14 @@ interface RoofData {
   questions: RoofQuestion[]
 }
 
-interface RoofDataInputProps {
+interface InputProps {
   selectedRoofType: string
   onSubmit: (data: number[]) => void
   onBack: () => void
   inputData: string[]
 }
 
-const RoofDataInput: React.FC<RoofDataInputProps> = ({
+const RoofDataInput: React.FC<InputProps> = ({
   selectedRoofType,
   onSubmit,
   onBack,
@@ -70,6 +71,10 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
       return
     }
 
+    if (value.length >= 8) {
+      return
+    }
+
     // Обновление состояния
     setInputData((prevData) => {
       const newData = [...prevData]
@@ -115,38 +120,8 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
     return null // Or you can render a loading state or an error message
   }
   return (
-    <div className="data-input-container">
-      <h2>Введите данные для крыши типа {selectedRoofType}:</h2>
-      <progress
-        className="progress-bar"
-        value={(currentQuestionIndex + 1) * (100 / roofData.questions.length)}
-        max="100"
-      ></progress>
-      <p>{`Шаг ${currentQuestionIndex + 1} из ${roofData.questions.length}`}</p>
-      <div>
-        <img
-          src={roofData?.questions[currentQuestionIndex].image}
-          alt={roofData?.questions[currentQuestionIndex].question}
-        />
-
-        <ol className="questions-list">
-          {roofData.questions.map((question, index) => (
-            <li
-              key={index}
-              className={
-                index === currentQuestionIndex
-                  ? 'active'
-                  : index < currentQuestionIndex
-                  ? 'completed'
-                  : ''
-              }
-            >
-              {question.question} {inputData[index]} м
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="button-container">
+    <div className="roof__container">
+      <div className="title__container">
         {currentQuestionIndex > 0 ? (
           <button className="button back-button" onClick={handlePrevQuestion}>
             Назад
@@ -156,26 +131,68 @@ const RoofDataInput: React.FC<RoofDataInputProps> = ({
             Назад
           </button>
         )}
-        <form>
-          <input
-            type="text"
-            inputMode="decimal"
-            value={inputData[currentQuestionIndex]}
-            placeholder={roofData?.questions[currentQuestionIndex].question}
-            onChange={(e) => handleInputChange(e.target.value)}
-          />
-        </form>
+        <h2>Введите данные для крыши типа: {selectedRoofType}</h2>
+      </div>
 
-        {currentQuestionIndex < (roofData?.questions.length || 0) - 1 && (
-          <button className="button next-button" onClick={handleNextQuestion}>
-            Далее
-          </button>
-        )}
-        {currentQuestionIndex === (roofData?.questions.length || 0) - 1 && (
-          <button className="button next-button" onClick={handleSubmit}>
-            Завершить
-          </button>
-        )}
+      <div className="list-button-img__contanier">
+        <img
+          src={roofData?.questions[currentQuestionIndex].image}
+          alt={roofData?.questions[currentQuestionIndex].question}
+        />
+        <div className="list-button__contanier">
+          <ol className="roof__questions-list">
+            {roofData.questions.map((question, index) => (
+              <li
+                key={index}
+                className={
+                  index === currentQuestionIndex
+                    ? 'active'
+                    : index < currentQuestionIndex
+                    ? 'completed'
+                    : ''
+                }
+              >
+                {question.question}: {inputData[index]} м
+              </li>
+            ))}
+          </ol>
+          <div className="roof__button-container">
+            <form>
+              <input
+                type="text"
+                inputMode="decimal"
+                value={inputData[currentQuestionIndex]}
+                placeholder={roofData?.questions[currentQuestionIndex].question}
+                onChange={(e) => handleInputChange(e.target.value)}
+              />
+            </form>
+
+            {currentQuestionIndex < (roofData?.questions.length || 0) - 1 && (
+              <button
+                className="button next-button"
+                onClick={handleNextQuestion}
+              >
+                Далее
+              </button>
+            )}
+            {currentQuestionIndex === (roofData?.questions.length || 0) - 1 && (
+              <button className="button next-button" onClick={handleSubmit}>
+                Завершить
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="roof__progress-container">
+        <progress
+          className="roof__progress-bar"
+          value={(currentQuestionIndex + 1) * (100 / roofData.questions.length)}
+          max="100"
+        ></progress>
+        <span>{`${currentQuestionIndex + 1} / ${
+          roofData.questions.length
+        }`}</span>
       </div>
     </div>
   )
