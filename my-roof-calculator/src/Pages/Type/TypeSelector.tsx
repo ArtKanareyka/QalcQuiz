@@ -1,6 +1,6 @@
 // TypeSelector.tsx
 import React from 'react'
-import storage from '../Data/storage'
+import storage from '../../Data/storage'
 import './type.scss'
 
 interface TypeSelectorProps {

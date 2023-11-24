@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app__container {
+  position: relative;
+  height: 400px;
+  width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Media Queries для планшетов */
+@media (max-width: 768px) {
+  .app__container {
+    max-width: 738px;
+    padding: 15px;
+    height: 100vh;
+  }
+}
+
+/* Media Queries для телефонов */
+@media (max-width: 480px) {
+  .app__container {
+    max-width: 460px;
+    padding: 10px;
+    height: 100vh;
+  }
+}

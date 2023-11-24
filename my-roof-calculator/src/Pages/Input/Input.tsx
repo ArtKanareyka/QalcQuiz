@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react'
-import storage from '../Data/storage'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
+import storage from '../../Data/storage'
 import './input.scss'
 
 interface RoofQuestion {
@@ -115,6 +115,19 @@ const RoofDataInput: React.FC<InputProps> = ({
       alert('Пожалуйста, введите корректные значения.')
     }
   }
+  const inputRef = useRef<HTMLInputElement>(null)
+  const handleKeyDown = async (
+    event: React.KeyboardEvent<HTMLButtonElement>
+  ) => {
+    if (event.key === 'Enter' || event.key === 'Spacebar') {
+      setTimeout(() => {
+        onclick
+        if (inputRef.current) {
+          inputRef.current.focus()
+        }
+      }, 0)
+    }
+  }
 
   if (!roofData || !roofData.questions) {
     return null // Or you can render a loading state or an error message
@@ -161,6 +174,8 @@ const RoofDataInput: React.FC<InputProps> = ({
               <input
                 type="text"
                 inputMode="decimal"
+                autoFocus
+                ref={inputRef}
                 value={inputData[currentQuestionIndex]}
                 placeholder={roofData?.questions[currentQuestionIndex].question}
                 onChange={(e) => handleInputChange(e.target.value)}
@@ -171,6 +186,8 @@ const RoofDataInput: React.FC<InputProps> = ({
               <button
                 className="button next-button"
                 onClick={handleNextQuestion}
+                onKeyDown={handleKeyDown}
+                tabIndex={0}
               >
                 Далее
               </button>

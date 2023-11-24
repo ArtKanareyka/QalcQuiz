@@ -1,13 +1,13 @@
 .type__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Single column for small screens */
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 20px;
 }
 
 .type__title {
   place-self: center;
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .type__buttons {
@@ -32,26 +32,22 @@
   height: 100px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .type__container {
-    grid-template-columns: repeat(3, 1fr); /* Two columns for tablets */
+    grid-template-columns: 1fr;
   }
   .type__title {
     place-self: center;
-    grid-column: span 3;
+    grid-column: span 1;
   }
 }
 
-/* Media query for larger screens */
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 740px) {
   .type__container {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* Back to three columns for larger screens */
+    grid-template-columns: repeat(2, 1fr);
   }
   .type__title {
     place-self: center;
-    grid-column: span 3;
+    grid-column: span 2;
   }
 }

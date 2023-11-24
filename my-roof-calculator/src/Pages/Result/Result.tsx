@@ -1,6 +1,6 @@
 // Result.tsx
 import React from 'react'
-import storage from '../Data/storage'
+import storage from '../../Data/storage'
 import './result.scss'
 
 interface ResultProps {
@@ -27,7 +27,7 @@ const Result: React.FC<ResultProps> = ({
     <div className="result__container">
       <div className="title__container">
         <button className="result__button" onClick={onRestart}>
-          Начать заново
+          Вернутсья на главную
         </button>
         <h2>Результат расчетов крыши типа: {selectedRoofType}</h2>
       </div>

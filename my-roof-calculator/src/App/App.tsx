@@ -1,9 +1,9 @@
 // App.tsx
 import React, { useState, useEffect } from 'react'
 import './styles.scss'
-import TypeSelector from './Type/TypeSelector'
-import Input from './Input/Input'
-import Result from './Result/Result'
+import TypeSelector from '../Pages/Type/TypeSelector'
+import Input from '../Pages/Input/Input'
+import Result from '../Pages/Result/Result'
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1)
@@ -45,11 +45,13 @@ const App: React.FC = () => {
         case 'Односкатная': {
           const A = roofData[0]
           const B = roofData[1]
-          const C = roofData[2]
-          const D = roofData[3]
+          const C1 = roofData[2]
+          const C2 = roofData[3]
+          const D = roofData[4]
           const K = Math.sqrt(B ** 2 + A ** 2)
-          const K1 = (K * C) / A
-          const S = D * (K + K1)
+          const K1 = (K * C1) / A
+          const K2 = (K * C2) / A
+          const S = D * (K + K1 + K2)
           calculatedResult = S.toFixed(2)
           break
         }
