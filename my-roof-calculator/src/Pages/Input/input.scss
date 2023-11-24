@@ -110,7 +110,7 @@
   /* Media Queries для планшетов */
   @media (max-width: 768px) {
     .title__container {
-      justify-content: flex-start;
+      justify-content: center;
       gap: 10px;
       h2 {
         font-size: 1.4rem;
@@ -122,14 +122,25 @@
     .list-button-img__contanier {
       padding-left: 0px;
     }
+    .roof__progress-bar {
+      width: 60%;
+    }
   }
 
   /* Media Queries для телефонов */
   @media (max-width: 480px) {
+    .title__container {
+      justify-content: flex-start;
+      gap: 10px;
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+    .button {
+      width: 60px;
+    }
     .list-button-img__contanier {
-      display: flex;
       flex-direction: column;
-
       padding-left: 0px;
     }
   }

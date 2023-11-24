@@ -43,3 +43,36 @@
     background-color: #2980b9;
   }
 }
+@media (max-width: 768px) {
+  .title__container {
+    justify-content: center;
+    gap: 10px;
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+  .button {
+    width: 60px;
+  }
+  .img-text__container {
+    padding-left: 0px;
+  }
+}
+
+/* Media Queries для телефонов */
+@media (max-width: 480px) {
+  .title__container {
+    justify-content: flex-start;
+    gap: 10px;
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+  .button {
+    width: 50px;
+  }
+  .img-text__container {
+    flex-direction: column;
+    padding-left: 0px;
+  }
+}
