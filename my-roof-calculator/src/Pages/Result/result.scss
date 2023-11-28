@@ -21,29 +21,9 @@
     padding-left: 30px;
   }
 
-  img {
-    width: 100%;
-    max-width: 300px;
-    max-height: 300px;
-  }
-
-  ol {
-    padding-inline-start: 0px;
-    text-align: left;
-    list-style-type: none;
-  }
-
-  .result__button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .result__button:hover {
-    background-color: #2980b9;
+  .result__result {
+    font-weight: bold;
+    font-size: large;
   }
 }
 @media (max-width: 768px) {
@@ -65,16 +45,5 @@
 @media (max-width: 480px) {
   .title__container {
     justify-content: flex-start;
-    gap: 10px;
-  }
-  .button {
-    width: 50px;
-  }
-  .img-text__container {
-    flex-direction: column;
-    padding-left: 0px;
-  }
-  .text__container {
-    padding-left: 0px;
   }
 }

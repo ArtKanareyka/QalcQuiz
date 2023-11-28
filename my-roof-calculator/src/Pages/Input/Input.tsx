@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import storage from '../../Data/storage'
 import './input.scss'
+import { Button, TextField } from '@mui/material'
 
 interface RoofQuestion {
   id: number
@@ -136,13 +137,21 @@ const RoofDataInput: React.FC<InputProps> = ({
     <div className="roof__container">
       <div className="title__container">
         {currentQuestionIndex > 0 ? (
-          <button className="button back-button" onClick={handlePrevQuestion}>
+          <Button
+            variant="outlined"
+            className="button back-button"
+            onClick={handlePrevQuestion}
+          >
             Назад
-          </button>
+          </Button>
         ) : (
-          <button className="button back-button" onClick={onBack}>
+          <Button
+            variant="outlined"
+            className="button back-button"
+            onClick={onBack}
+          >
             Назад
-          </button>
+          </Button>
         )}
         <h2>Введите данные для крыши типа: {selectedRoofType}</h2>
       </div>
@@ -170,32 +179,38 @@ const RoofDataInput: React.FC<InputProps> = ({
             ))}
           </ol>
           <div className="roof__button-container">
-            <form>
-              <input
-                type="text"
-                inputMode="decimal"
-                autoFocus
-                ref={inputRef}
-                value={inputData[currentQuestionIndex]}
-                placeholder={roofData?.questions[currentQuestionIndex].question}
-                onChange={(e) => handleInputChange(e.target.value)}
-              />
-            </form>
+            <TextField
+              size="small"
+              id="outlined-basic"
+              variant="outlined"
+              type="text"
+              inputMode="decimal"
+              autoFocus
+              ref={inputRef}
+              value={inputData[currentQuestionIndex]}
+              label={roofData?.questions[currentQuestionIndex].question}
+              onChange={(e) => handleInputChange(e.target.value)}
+            />
 
             {currentQuestionIndex < (roofData?.questions.length || 0) - 1 && (
-              <button
+              <Button
+                variant="contained"
                 className="button next-button"
                 onClick={handleNextQuestion}
                 onKeyDown={handleKeyDown}
                 tabIndex={0}
               >
                 Далее
-              </button>
+              </Button>
             )}
             {currentQuestionIndex === (roofData?.questions.length || 0) - 1 && (
-              <button className="button next-button" onClick={handleSubmit}>
+              <Button
+                variant="contained"
+                className="button next-button"
+                onClick={handleSubmit}
+              >
                 Завершить
-              </button>
+              </Button>
             )}
           </div>
         </div>

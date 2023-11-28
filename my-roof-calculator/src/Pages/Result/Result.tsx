@@ -2,6 +2,7 @@
 import React from 'react'
 import storage from '../../Data/storage'
 import './result.scss'
+import { Button } from '@mui/material'
 
 interface ResultProps {
   result: string | null
@@ -26,9 +27,13 @@ const Result: React.FC<ResultProps> = ({
   return (
     <div className="result__container">
       <div className="title__container">
-        <button className="result__button" onClick={onRestart}>
-          Вернутсья на главную
-        </button>
+        <Button
+          variant="outlined"
+          className="result__button"
+          onClick={onRestart}
+        >
+          На главную
+        </Button>
         <h2>Результат расчетов крыши типа: {selectedRoofType}</h2>
       </div>
       <div className="img-text__container">
