@@ -32,22 +32,22 @@
   height: 100px;
 }
 
-@media screen and (min-width: 500px) {
-  .type__container {
-    grid-template-columns: 1fr;
-  }
-  .type__title {
-    place-self: center;
-    grid-column: span 1;
-  }
-}
-
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 768px) {
   .type__container {
     grid-template-columns: repeat(2, 1fr);
   }
   .type__title {
     place-self: center;
     grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .type__container {
+    grid-template-columns: 1fr;
+  }
+  .type__title {
+    place-self: center;
+    grid-column: span 1;
   }
 }

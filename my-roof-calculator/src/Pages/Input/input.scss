@@ -1,10 +1,11 @@
 .roof__container {
-  text-align: center;
+  padding: 20px;
 
   .title__container {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    text-align: center;
   }
 
   .list-button-img__contanier {
@@ -16,15 +17,10 @@
   .list-button__contanier {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     padding-left: 30px;
   }
 
   img {
-    grid-row: span 2; /* элемент будет занимать 2 строки */
-    grid-column: span 1; /* элемент будет занимать 1 колонку */
-    justify-self: center;
     width: 100%;
     max-height: 300px;
     max-width: 300px;
@@ -39,7 +35,7 @@
   .roof__questions-list li.active {
     color: black;
     font-weight: bold;
-    font-size: larger;
+    font-size: large;
   }
 
   /* Стили для пройденных вопросов */
@@ -66,7 +62,7 @@
     border: 1px solid #3498db;
     text-align: center;
     border-radius: 4px;
-    height: 31px;
+    height: 30px;
   }
 
   .roof__button-container {
@@ -82,7 +78,7 @@
     background-color: #3498db;
     color: #fff;
     width: 80px;
-    height: 35px;
+    height: 34px;
   }
 
   .back-button:hover {
@@ -109,38 +105,35 @@
 
   /* Media Queries для планшетов */
   @media (max-width: 768px) {
-    .title__container {
-      justify-content: center;
-      gap: 10px;
-      h2 {
-        font-size: 1.4rem;
-      }
-    }
-    .button {
-      width: 60px;
-    }
     .list-button-img__contanier {
+      flex-direction: column;
       padding-left: 0px;
+      padding-bottom: 15px;
     }
-    .roof__progress-bar {
-      width: 60%;
+
+    .list-button__contanier {
+      padding-left: 0px;
     }
   }
 
   /* Media Queries для телефонов */
   @media (max-width: 480px) {
     .title__container {
-      justify-content: flex-start;
-      gap: 10px;
       h2 {
-        font-size: 1.4rem;
+        font-size: 4vw;
       }
     }
-    .button {
-      width: 60px;
-    }
+
     .list-button-img__contanier {
       flex-direction: column;
+      font-size: 3.5vw;
+      padding-left: 0px;
+      padding-bottom: 10px;
+    }
+    .roof__questions-list li.active {
+      font-size: 3.8vw;
+    }
+    .list-button__contanier {
       padding-left: 0px;
     }
   }

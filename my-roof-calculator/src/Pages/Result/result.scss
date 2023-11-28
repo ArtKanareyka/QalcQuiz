@@ -1,10 +1,11 @@
 .result__container {
-  text-align: center;
+  padding: 20px;
 
   .title__container {
     display: flex;
+    text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .img-text__container {
@@ -17,11 +18,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 30px;
   }
 
   img {
     width: 100%;
     max-width: 300px;
+    max-height: 300px;
   }
 
   ol {
@@ -45,16 +48,14 @@
 }
 @media (max-width: 768px) {
   .title__container {
-    justify-content: center;
+    font-size: 13px;
     gap: 10px;
-    h2 {
-      font-size: 1.4rem;
-    }
-  }
-  .button {
-    width: 60px;
   }
   .img-text__container {
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  .text__container {
     padding-left: 0px;
   }
 }
@@ -64,15 +65,15 @@
   .title__container {
     justify-content: flex-start;
     gap: 10px;
-    h2 {
-      font-size: 1.4rem;
-    }
   }
   .button {
     width: 50px;
   }
   .img-text__container {
     flex-direction: column;
+    padding-left: 0px;
+  }
+  .text__container {
     padding-left: 0px;
   }
 }
