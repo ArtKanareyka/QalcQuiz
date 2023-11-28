@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import storage from '../../Data/storage'
 import './input.scss'
-import { Button, TextField } from '@mui/material'
+import { Button, OutlinedInput } from '@mui/material'
 
 interface RoofQuestion {
   id: number
@@ -178,17 +178,15 @@ const RoofDataInput: React.FC<InputProps> = ({
               </li>
             ))}
           </ol>
-          <div className="roof__button-container">
-            <TextField
+          <form className="roof__button-container">
+            <OutlinedInput
               size="small"
-              id="outlined-basic"
-              variant="outlined"
               type="text"
               inputMode="decimal"
               autoFocus
               ref={inputRef}
               value={inputData[currentQuestionIndex]}
-              label={roofData?.questions[currentQuestionIndex].question}
+              placeholder={roofData?.questions[currentQuestionIndex].question}
               onChange={(e) => handleInputChange(e.target.value)}
             />
 
@@ -212,7 +210,7 @@ const RoofDataInput: React.FC<InputProps> = ({
                 Завершить
               </Button>
             )}
-          </div>
+          </form>
         </div>
       </div>
 
