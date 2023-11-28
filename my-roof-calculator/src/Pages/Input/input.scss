@@ -112,29 +112,15 @@
     }
 
     .list-button__contanier {
-      padding-left: 0px;
+      width: 300px;
+      padding-left: 50px;
     }
   }
 
   /* Media Queries для телефонов */
   @media (max-width: 480px) {
-    .title__container {
-      h2 {
-        font-size: 4vw;
-      }
-    }
-
     .list-button-img__contanier {
-      flex-direction: column;
-      font-size: 3.5vw;
-      padding-left: 0px;
       padding-bottom: 10px;
-    }
-    .roof__questions-list li.active {
-      font-size: 3.8vw;
-    }
-    .list-button__contanier {
-      padding-left: 0px;
     }
   }
 }
