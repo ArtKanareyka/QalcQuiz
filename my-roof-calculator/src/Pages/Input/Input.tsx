@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import storage from '../../Data/storage'
 import './input.scss'
-import { Button, OutlinedInput } from '@mui/material'
+import { Button } from '@mui/material'
 
 interface RoofQuestion {
   id: number
@@ -179,8 +179,7 @@ const RoofDataInput: React.FC<InputProps> = ({
             ))}
           </ol>
           <form className="roof__button-container">
-            <OutlinedInput
-              size="small"
+            <input
               type="text"
               inputMode="decimal"
               autoFocus
