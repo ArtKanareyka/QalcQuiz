@@ -158,6 +158,7 @@ const RoofDataInput: React.FC<InputProps> = ({
 
       <div className="list-button-img__contanier">
         <img
+          className="qalc-img"
           src={roofData?.questions[currentQuestionIndex].image}
           alt={roofData?.questions[currentQuestionIndex].question}
         />
