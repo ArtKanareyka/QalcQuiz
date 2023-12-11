@@ -1,41 +1,41 @@
-.result__container {
+.calc-quiz-result__container {
   padding: 20px;
 
-  .title__container {
+  .calc-quiz-title__container {
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: space-around;
   }
 
-  .img-text__container {
+  .calc-quiz-img-text__container {
     display: flex;
     align-items: center;
     padding-left: 30px;
   }
 
-  .text__container {
+  .calc-quiz-text__container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 30px;
   }
 
-  .result__result {
+  .calc-quiz-result__result {
     font-weight: bold;
     font-size: large;
   }
 }
 @media (max-width: 768px) {
-  .title__container {
+  .calc-quiz-title__container {
     font-size: 13px;
     gap: 10px;
   }
-  .img-text__container {
+  .calc-quiz-img-text__container {
     flex-direction: column;
     padding-left: 0px;
   }
-  .text__container {
+  .calc-quiz-text__container {
     width: 300px;
     padding-left: 0px;
   }
@@ -43,7 +43,7 @@
 
 /* Media Queries для телефонов */
 @media (max-width: 480px) {
-  .title__container {
+  .calc-quiz-title__container {
     justify-content: flex-start;
   }
 }

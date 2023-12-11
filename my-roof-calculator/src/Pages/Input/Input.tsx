@@ -134,12 +134,12 @@ const RoofDataInput: React.FC<InputProps> = ({
     return null // Or you can render a loading state or an error message
   }
   return (
-    <div className="roof__container">
-      <div className="title__container">
+    <div className="calc-quiz-roof__container">
+      <div className="calc-quiz-title__container">
         {currentQuestionIndex > 0 ? (
           <Button
             variant="outlined"
-            className="button back-button"
+            className="calc-quiz-button back-button"
             onClick={handlePrevQuestion}
           >
             Назад
@@ -147,7 +147,7 @@ const RoofDataInput: React.FC<InputProps> = ({
         ) : (
           <Button
             variant="outlined"
-            className="button back-button"
+            className="calc-quiz-button back-button"
             onClick={onBack}
           >
             Назад
@@ -156,14 +156,14 @@ const RoofDataInput: React.FC<InputProps> = ({
         <h2>Введите данные для крыши типа: {selectedRoofType}</h2>
       </div>
 
-      <div className="list-button-img__contanier">
+      <div className="calc-quiz-list-button-img__contanier">
         <img
-          className="qalc-img"
+          className="calc-quiz-qalc-img"
           src={roofData?.questions[currentQuestionIndex].image}
           alt={roofData?.questions[currentQuestionIndex].question}
         />
-        <div className="list-button__contanier">
-          <ol className="roof__questions-list">
+        <div className="calc-quiz-list-button__contanier">
+          <ol className="calc-quiz-roof__questions-list calc-quiz-ol">
             {roofData.questions.map((question, index) => (
               <li
                 key={index}
@@ -179,7 +179,7 @@ const RoofDataInput: React.FC<InputProps> = ({
               </li>
             ))}
           </ol>
-          <form className="roof__button-container">
+          <form className="calc-quiz-roof__button-container">
             <input
               type="text"
               inputMode="decimal"
@@ -193,7 +193,7 @@ const RoofDataInput: React.FC<InputProps> = ({
             {currentQuestionIndex < (roofData?.questions.length || 0) - 1 && (
               <Button
                 variant="contained"
-                className="button next-button"
+                className="calc-quiz-button next-button"
                 onClick={handleNextQuestion}
                 onKeyDown={handleKeyDown}
                 tabIndex={0}
@@ -204,7 +204,7 @@ const RoofDataInput: React.FC<InputProps> = ({
             {currentQuestionIndex === (roofData?.questions.length || 0) - 1 && (
               <Button
                 variant="contained"
-                className="button next-button"
+                className="calc-quiz-button next-button"
                 onClick={handleSubmit}
               >
                 Завершить
@@ -214,9 +214,9 @@ const RoofDataInput: React.FC<InputProps> = ({
         </div>
       </div>
 
-      <div className="roof__progress-container">
+      <div className="calc-quiz-roof__progress-container">
         <progress
-          className="roof__progress-bar"
+          className="calc-quiz-roof__progress-bar"
           value={(currentQuestionIndex + 1) * (100 / roofData.questions.length)}
           max="100"
         ></progress>

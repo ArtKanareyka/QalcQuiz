@@ -1,43 +1,43 @@
-.roof__container {
+.calc-quiz-roof__container {
   padding: 20px;
 
-  .title__container {
+  .calc-quiz-title__container {
     display: flex;
     align-items: center;
     justify-content: space-around;
     text-align: center;
   }
 
-  .list-button-img__contanier {
+  .calc-quiz-list-button-img__contanier {
     display: flex;
     align-items: center;
     padding-left: 30px;
   }
 
-  .list-button__contanier {
+  .calc-quiz-list-button__contanier {
     display: flex;
     flex-direction: column;
     padding-left: 30px;
   }
 
   /* Стили для текущего вопроса */
-  .roof__questions-list li.active {
+  .calc-quiz-roof__questions-list li.active {
     color: black;
     font-weight: bold;
     font-size: large;
   }
 
   /* Стили для пройденных вопросов */
-  .roof__questions-list li.completed {
+  .calc-quiz-roof__questions-list li.completed {
     color: green;
   }
 
   /* Стили для неотвеченных вопросов */
-  .roof__questions-list li {
+  .calc-quiz-roof__questions-list li {
     color: gray;
   }
 
-  .roof__button-container {
+  .calc-quiz-roof__button-container {
     display: flex;
     gap: 10px;
     input {
@@ -62,7 +62,7 @@
   //   background-color: #218c54;
   // }
 
-  .roof__progress-container {
+  .calc-quiz-roof__progress-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,20 +71,20 @@
     gap: 10px;
   }
 
-  .roof__progress-bar {
+  .calc-quiz-roof__progress-bar {
     flex-grow: 1;
     height: 30px;
   }
 
   /* Media Queries для планшетов */
   @media (max-width: 768px) {
-    .list-button-img__contanier {
+    .calc-quiz-list-button-img__contanier {
       flex-direction: column;
       padding-left: 0px;
       padding-bottom: 15px;
     }
 
-    .list-button__contanier {
+    .calc-quiz-list-button__contanier {
       width: 300px;
       padding-left: 50px;
     }
@@ -92,7 +92,7 @@
 
   /* Media Queries для телефонов */
   @media (max-width: 480px) {
-    .list-button-img__contanier {
+    .calc-quiz-list-button-img__contanier {
       padding-bottom: 10px;
     }
   }

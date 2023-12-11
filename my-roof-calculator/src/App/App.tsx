@@ -121,7 +121,7 @@ const App: React.FC = () => {
   }, [roofData, selectedRoofType])
 
   return (
-    <div className="app__container">
+    <div className="calc-quiz-app__container">
       {currentStep === 1 && <TypeSelector onSelect={handleRoofTypeSelect} />}
       {currentStep === 2 && (
         <Input

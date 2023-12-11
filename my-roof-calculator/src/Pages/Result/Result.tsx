@@ -25,28 +25,32 @@ const Result: React.FC<ResultProps> = ({
   }
 
   return (
-    <div className="result__container">
-      <div className="title__container">
+    <div className="calc-quiz-result__container">
+      <div className="calc-quiz-title__container">
         <Button
           variant="outlined"
-          className="result__button"
+          className="calc-quiz-result__button"
           onClick={onRestart}
         >
           На главную
         </Button>
         <h2>Результат расчетов крыши типа: {selectedRoofType}</h2>
       </div>
-      <div className="img-text__container">
-        <img src={roofData.imageResult} alt={roofData.alt} />
-        <div className="text__container">
-          <ol className="result__list">
+      <div className="calc-quiz-img-text__container">
+        <img
+          className="calc-quiz-qalc-img"
+          src={roofData.imageResult}
+          alt={roofData.alt}
+        />
+        <div className="calc-quiz-text__container">
+          <ol className="calc-quiz-result__list calc-quiz-ol">
             {roofData.questions.map((question, index) => (
-              <li className="result__item" key={index}>
+              <li className="calc-quiz-result__item" key={index}>
                 {question.question}: {inputData[index]} м
               </li>
             ))}
           </ol>
-          <p className="result__result">Площадь крыши: {result} м2</p>
+          <p className="calc-quiz-result__result">Площадь крыши: {result} м2</p>
         </div>
       </div>
     </div>

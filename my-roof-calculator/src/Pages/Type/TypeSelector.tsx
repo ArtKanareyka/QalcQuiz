@@ -10,18 +10,22 @@ interface TypeSelectorProps {
 
 const TypeSelector: React.FC<TypeSelectorProps> = ({ onSelect }) => {
   return (
-    <div className="type__container">
-      <h2 className="type__title">Выберите тип крыши:</h2>
+    <div className="calc-quiz-type__container">
+      <h2 className="calc-quiz-type__title">Выберите тип крыши:</h2>
       {storage.map((item) => (
         <Button
           variant="outlined"
-          className="type__buttons"
+          className="calc-quiz-type__buttons"
           key={item.id}
           onClick={() => onSelect(item.typeRoof)}
         >
           {item.typeRoof}
 
-          <img className="type__image" src={item.image} alt={item.alt} />
+          <img
+            className="calc-quiz-type__image"
+            src={item.image}
+            alt={item.alt}
+          />
         </Button>
       ))}
     </div>
